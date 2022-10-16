@@ -81,8 +81,18 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
   .nobull {
     list-style: none;
+    list-style-position: inside;
+  }
+  ul.nested {
+    padding-left: 20px;
+    list-style: none;
+    list-style-position: inside;
   }
 
   /*Images*/
