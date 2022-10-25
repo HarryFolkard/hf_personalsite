@@ -35,11 +35,11 @@ function addClass(element, name) {
 }
 
 function checkAndRemove(input, element) {
-  var arry1 = input;
-  if (arry1.indexOf("show") > -1) {
+  input;
+  if (input.indexOf("show") > -1) {
     element.classList.remove("show");
   }
-  if (arry1.indexOf("hide") > -1) {
+  if (input.indexOf("hide") > -1) {
     element.classList.remove("hide");
   }
   return element;
