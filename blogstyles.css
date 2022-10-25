@@ -1,0 +1,74 @@
+/*Specific CSS for the blog page*/
+
+/*ARTICLES*/
+article {
+  color: black;
+  background-color: #fffefe;
+  padding: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
+  margin-right: 0;
+  border-radius: 5px;
+  clear: both;
+  display: block;
+}
+.blog-title {
+  text-align: center;
+}
+.blog {
+  margin: auto;
+  width: 95%;
+}
+
+/*Blog Post Images*/
+  .blog-img {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 95%;
+    height: 70%;
+  }
+
+/*PAGE FUNCTIONALITY*/
+  .moretext {
+    display: none;
+  }
+
+/*TAGS & READ-MORE BTNs*/
+  /*Aesthetics*/
+  .btn-container {
+    margin-left: 1%;
+    padding: 5px;
+  }
+  button.read {
+    border-radius: 10px;
+  }
+  .tags {
+    margin-top: -5px;
+    margin-bottom: 10px;
+  }
+  button, .post-tag {
+    background-color: #fffefe;
+    color: #04AA6D;
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    border: none;
+  }
+  button:hover {
+    background-color: #555;
+    color: white;
+  }
+  /*Functionality*/
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+  /*Selected*/
+    .html-btn.selected , .js-btn.selected , .css-btn.selected , .r-btn.selected , .latex-btn.selected , .webhosting-btn.selected, .econ-btn.selected {
+      background-color: #04AA6D;
+      color: #fffefe;
+    }

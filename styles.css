@@ -10,14 +10,25 @@ body {
   margin: auto;
 }
 
-/*BRAND*/
-  .brand {
+/*BRAND & HEADINGS*/
+  .brand , .heading {
     font-size: 1.5em;
     font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 2.5px;
     padding: 5px;
+  }
+  .heading {
+    font-weight: 500;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: #04AA6D;
   }
 
 /*SIDEBAR*/
@@ -58,14 +69,11 @@ body {
 
   /*Icons*/
   .sidebar .icon a:hover:not(.active) {
-    background-color: #f1f1f1;
+    background-color: #fdfafa;
     color: black;
   }
   .icon {
     font-size: 32px;
-  }
-  .icon-center {
-    text-align: center;
   }
   
 /*PAGE CONTENT*/
@@ -77,10 +85,6 @@ body {
     height: 100%;
     font-family: 'Work sans', sans-serif;
     /* background-color: #f1f1f1; */
-  }
-  h2 {
-    margin-bottom: 10px;
-    margin-top: 10px;
   }
   h3 {
     margin-top: 5px;
@@ -103,7 +107,7 @@ body {
   #pi {
     float: right;
     width: 230px;
-    margin: 5px 0 10px 10px;
+    margin: 0px 0px 10px 10px;
   }
 
   /*Links*/
@@ -123,50 +127,8 @@ body {
     text-decoration: underline;
   }
 
-  /*articles*/
-  article {
-    color: black;
-    background-color: #fffefe;
-    padding: 10px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    margin-bottom: 20px;
-    margin-right: 5px;
-    border-radius: 5px;
-    clear: both;
-  }
-  .blog-title {
-    text-align: center;
-  }
-  .blog {
-    margin: auto;
-    width: 95%;
-  }
-
-  /*Blog Images*/
-  .blog-img {
-    display: block;
-    margin: auto;
-    width: 95%;
-    height: 70%;
-  }
-
-/*PAGE FUNCTIONALITY*/
-  /*Read More Button*/
-  .btn-container {
-    margin-left: 2%;
-    padding: 5px;
-    outline-color: black;
-  }
-  .moretext {
-    display: none;
-  }
-  .text.show-more .moretext {
-    display: inline;
-  }
-
 /*MEDIA QUERIES*/
-  /*On Screens < 873px, get rid of the padding! */
+  /*On Screens < 873px, get rid of the padding*/
   @media screen and (max-width: 873px) {
     body {
       background-color: #f3ebf0;
@@ -174,7 +136,7 @@ body {
       margin: auto;
     }
     .content {
-      padding-right: 11px;
+      padding-right: 16px;
     }
   }
   /*On Screens < 707px, display the bar vertically, instead of horizontally*/
@@ -186,6 +148,7 @@ body {
       }
     .content {
         margin-left: 0;
+        padding-top: 0;
         padding-bottom: 20px; /*to add some space between bottom of page and content*/
     }
     .sidebar a {
@@ -193,14 +156,11 @@ body {
       float: none;
       padding: 6px; /*tightens up sidebar (now a topnav) on smaller screens*/
     }
-    .topbar {
-      height: 0px; /*otherwise top bar stays at the top when scrolling*/
-    }
   }
   /*On Screens < 507px, display the image in the centre*/
   @media screen and (max-width: 507px) {
     #pi {
         width: 100%;
-        margin: -22px 2px 10px 0;
+        margin: auto;
       }
   }

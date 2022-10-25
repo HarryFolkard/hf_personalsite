@@ -8,6 +8,7 @@
   <title>harryfolkard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blogstyles.css">
 </head>
 
 <body>
@@ -16,12 +17,12 @@
     <nav class="topbar"></nav>
 
     <nav class="sidebar">
-      <div class="brand">Harry <br>Folkard</div>
+      <div class="brand">Harry<br>Folkard</div>
       <a href="index.html">Home</a>
       <a class="active" href="blog.html">Blog</a>
       <a href="econ.html">Oxford Undergraduate Economics</a>
-      <a href="alevels.html">A Levels</a>
-      <a href="tutoring.html">Tutoring</a>
+      <a href="#alevels.html">A Levels</a>
+      <a href="#tutoring.html">Tutoring</a>
       <a href="contact.html">Contact</a>
       <div class="icon">
         <a href="https://github.com/HarryFolkard?tab=repositories" target="blank"><i class="fa fa-github-square"></i></a>
@@ -32,16 +33,28 @@
 
   <!-- Content -->
   <main class="content">
-    <h2>Blog</h2>
+    <h2 class="heading">Blog</h2>
 
-    <article>
+    <div class="tags">
+      Tags:
+      <button onclick="tagSelection('all')">All Posts</button>
+      <button onclick="tagSelection('html')">HTML</button>
+      <button onclick="tagSelection('css')">CSS</button>
+      <button onclick="tagSelection('js')">JavaScript</button>
+      <button onclick="tagSelection('latex')">LaTeX</button>
+      <button onclick="tagSelection('r')">R</button>
+      <button onclick="tagSelection('webhosting')">Web-hosting</button>
+      <button onclick="tagSelection('econ')">Economics</button>
+    </div>
+
+    <article class="all webhosting">
         <h3 class="blog-title">Hosting my site with Netlify</h3>
         <h4 class="blog-title">21/10/2022</h4>
         <img class="blog-img" src="images/netlify.jpg">
           <p class="text blog">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore qui inventore necessitatibus eligendi quae sapiente illo sequi, commodi aspernatur aperiam! Nostrum harum quae ducimus quam cumque amet delectus aliquam.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique debitis, eligendi incidunt officiis omnis porro quasi consectetur laborum perspiciatis atque, blanditiis reiciendis harum natus soluta! Recusandae eos laborum repellat molestiae?
-            <span class="moretext">
+            <span class="moretext more1">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
             <br>
@@ -50,18 +63,18 @@
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
           </span>
-          <div class="btn-container"><button class="read-more-btn">Read More</button></div>
+          <div class="btn-container"><button class="btn" onclick="btnSelection('more1')">Read More</button></div>
           </p>
     </article>
   
-    <article>
+    <article class="all html css js">
       <h3 class="blog-title">Building a Static Website in HTML, CSS, and JavaScript</h3>
       <h4 class="blog-title">21/10/2022</h4>
       <img class="blog-img" src="images/htmlcssjs.png">
         <p class="text blog">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore qui inventore necessitatibus eligendi quae sapiente illo sequi, commodi aspernatur aperiam! Nostrum harum quae ducimus quam cumque amet delectus aliquam.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique debitis, eligendi incidunt officiis omnis porro quasi consectetur laborum perspiciatis atque, blanditiis reiciendis harum natus soluta! Recusandae eos laborum repellat molestiae?
-          <span class="moretext">
+          <span class="moretext more2">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
           <br>
@@ -70,38 +83,43 @@
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
         </span>
-        <div class="btn-container"><button class="read-more-btn">Read More</button></div>
+        <div class="btn-container"><button class="btn" onclick="btnSelection('more2')">Read More</button></div>
         </p>
     </article>
 
-    <article>
+    <article class="all latex">
       <h3 class="blog-title">Transferring MathType (Word) into LaTeX</h3>
       <h4 class="blog-title">21/10/2022</h4>
       <img class="blog-img" src="images/mathpix.webp">
         <p class="text blog">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore qui inventore necessitatibus eligendi quae sapiente illo sequi, commodi aspernatur aperiam! Nostrum harum quae ducimus quam cumque amet delectus aliquam.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique debitis, eligendi incidunt officiis omnis porro quasi consectetur laborum perspiciatis atque, blanditiis reiciendis harum natus soluta! Recusandae eos laborum repellat molestiae?
-          <span class="moretext">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
+          I wrote my finals notes in MS Word but when I decided to make this site and share them I wanted to use a PDF format.
+          I started copying and pasting my notes into R Studio to be converted into LaTeX PDFs and almost immediately noticed a serious problem with equations I had written in Word. 
+          All the equations I had written used the MathType add-on which, at the time, was very helpful and sped up my revision massively. 
+          The problem with it, however, is that once an equation has been written it is outputted as an image into your Word document.
+          When copying and pasting from Word to R Studio I was therefore really copying and pasting an image rather than an equation.
+          This meant none of my equations could be made into the necessary $$x=\alpha + \beta y$$ LaTeX format, and so couldn't be read by R Markdown.
+          Initially the only solution seemed to be re-typing all the equations into LaTeX, though very quickly after starting that tedious process I decided to search for a shortcut instead.
+          <span class="moretext more3">
           <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore qui inventore necessitatibus eligendi quae sapiente illo sequi, commodi aspernatur aperiam! Nostrum harum quae ducimus quam cumque amet delectus aliquam.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique debitis, eligendi incidunt officiis omnis porro quasi consectetur laborum perspiciatis atque, blanditiis reiciendis harum natus soluta! Recusandae eos laborum repellat molestiae?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
+          The best solution I found was to use an online service called Mathpix. Mathpix, for a $4.99 subscription fee, offers 500 pages of PDF conversion into the appropiate LaTeX format.
+          It uses AI powered document conversion technology to convert either snips (or photos) or entire documents into LaTeX. 
+          Although it was annoying to have to pay, the service turned what would have been a 3 month job into one that took a matter of minutes. That said the software is by no means perfect.
+          Often vectors and other symbols that I had used \boldsymbol or \mathbf for got converted to \mathbb or something else that I didn't want it to be. 
+          Similarly Mathpix didn't seem to recognise bullet points and converted them to \circ's instead. 
+          I solved all these problems simply by using ctrl+f and then replacing, for example, \circ with '-'. I'm sure this wasn't the fastest solution but I couldn't be bothered to search for another fix.
         </span>
-        <div class="btn-container"><button class="read-more-btn">Read More</button></div>
+        <div class="btn-container"><button class="btn" onclick="btnSelection('more3')">Read More</button></div>
         </p>
     </article>
 
-    <article>
+    <article class="all latex r">
       <h3 class="blog-title">Making LaTeX PDFs in R Markdown</h3>
       <h4 class="blog-title">21/10/2022</h4>
-      <img class="blog-img" src="images/netlify.jpg">
+      <img class="blog-img" src="images/latex.png">
         <p class="text blog">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore qui inventore necessitatibus eligendi quae sapiente illo sequi, commodi aspernatur aperiam! Nostrum harum quae ducimus quam cumque amet delectus aliquam.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique debitis, eligendi incidunt officiis omnis porro quasi consectetur laborum perspiciatis atque, blanditiis reiciendis harum natus soluta! Recusandae eos laborum repellat molestiae?
-          <span class="moretext">
+          <span class="moretext more4">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
           <br>
@@ -110,7 +128,7 @@
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, natus. Reprehenderit, nisi facere. Molestiae recusandae tempora dolores vitae, ipsa itaque facilis iste temporibus vel architecto sapiente aperiam laboriosam quaerat explicabo?
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis aut tempore, magnam dolores recusandae minima error consequuntur eaque excepturi, quasi eligendi accusantium ipsam corrupti explicabo placeat quod quos asperiores.
         </span>
-        <div class="btn-container"><button class="read-more-btn">Read More</button></div>
+        <div class="btn-container"><button class="btn" onclick="btnSelection('more4')">Read More</button></div>
         </p>
     </article>
 
