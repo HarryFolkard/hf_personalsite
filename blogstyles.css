@@ -4,11 +4,8 @@
 article {
   color: black;
   background-color: #fffefe;
-  padding: 10px;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding: 1px 30px 1px 30px;
   margin-bottom: 20px;
-  margin-right: 0;
   border-radius: 5px;
   clear: both;
   display: block;
@@ -16,18 +13,14 @@ article {
 .blog-title {
   text-align: center;
 }
-.blog {
-  margin: auto;
-  width: 95%;
-}
 
 /*Blog Post Images*/
   .blog-img {
     display: block;
-    margin: auto;
+    /* margin: auto; */
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 95%;
+    width: 100%;
   }
   .blog-scnd-img {
     display: block;
@@ -45,10 +38,6 @@ article {
 
 /*TAGS & READ-MORE BTNs*/
   /*Aesthetics*/
-  .btn-container {
-    margin-left: 1.4%;
-    padding: 5px;
-  }
   button.read {
     border-radius: 10px;
   }
@@ -59,7 +48,7 @@ article {
   button {
     background-color: #fffefe;
     color: #04AA6D;
-    margin-top: 5px;
+    margin: 5px 0px 5px 0px;
     padding: 3px;
     border-radius: 3px;
     border: none;
