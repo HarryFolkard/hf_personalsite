@@ -47,6 +47,57 @@
       <button onclick="tagSelection('econ')">Economics</button>
     </div>
 
+    <article class="all js">
+      <h3 class="blog-title">Read More Buttons and Blog Post Tags</h3>
+      <h4 class="blog-title">26/10/2022</h4>
+      <img class="blog-img" src="images/btntag.jpg">
+        <p class="text blog">
+          The most complicated part of making this website was undoubtably using JavaScript for the functionality of the read-more/read-less buttons on these posts and the tags to filter posts by.
+          Although I did find lots of examples of code online which I could have copied, pasted, and slightly altered to get this functionality, I wanted to learn and write the JS myself. 
+          What I came up with might not be the most efficient way of getting these buttons to work, but it does work! 
+          <span class="moretext more5">
+          <br>
+          In explaining this I am going to use a simplified version of the code just to avoid taking up loads of space, but if you want to read the full version you can find the source code to this site on my GitHub, which is linked in the navigation bar.
+          <br><br>
+          (1) Blog Post Tags:
+          <br><br>
+          To start I have attached images of simplified versions of the html and css for a blog page. 
+          Ultimately how you style the buttons and content doesn't matter, so the only focus of this is the classes I have asigned to each html tag, and the classes .show and .hide in the css.
+          For the blog post tags, on clicking on the tag the user initiates the function tagSelection(c) where c is the tag which this clicked. The purpose of this function is very simple. It just needs to add the class .show to all blog posts with the class="c", and add the class .hide to all blog posts without the class="c".
+          For example when you click the HTML tag, you initiate tagSelection('html'), which hides all blog posts without "html" as a class, and shows the ones with "html" as a class.
+          <img class="blog-scnd-img" src="images/btntag.jpg" width=20%>
+          Inside the function tagSelection(c) we initially define a variable x, which is a NodeList (sort of like an arrary) of all the classes attributed to each blog post. 
+          I use document.querySelectorAll(".all") since every blog post has the "all" class, and querySelectorAll exactly returns the classes included with "all". The NodeList (x) hence has as many nodes as there are blog posts. 
+          So for the first post, x[1], the node is article.all.html.css and etc, etc for node 2 through to node n. 
+          Moving on then to the for loop, this just cycles through each node one at a time, and of each node the if statement asks if "c" (the tag we selected) appears in that node.
+          If it does then we add .show to that blog post, if it doesn't we add .hide.
+          <img class="blog-scnd-img" src="images/btntag2.jpg" width=20%>
+          Adding the classes "show" and "hide" respectively was not hard, element.className += " " + arr2; is the only line needed to do this, where 'element' is the 'x[i]'.
+          One would think then that the process should be finished. The problem I found, however, is that if the user wants to click on another tag after clicking the first one, all the posts now already have the class "hide" or "show" added, which will affect which posts show/hide in this second click.
+          To solve this problem I created the function checkAndRemove, which checks for "show" and "hide", and removes them if they appear.
+          <br><br>
+          The important objects to take away from this are:
+          <br>
+          document.querySelectorAll(".all") : which gets all the classes attached to the element with the class "all"; 
+          .split() : which splits our NodeList into individual strings;
+          .indexOf() : which checks if the string "c" == one of our node strings, if it does it returns the position of c in that node, else it returns -1.
+          <br><br>
+          (2) Read More/Read Less 
+          <br><br>
+          The read-more/-less buttons work on much the same principle as the blog post tags. 
+          <img class="blog-scnd-img" src="images/btntag3.jpg" width=20%>
+          First btnSelection(c) is initiated by a click, on which a for loop asks if each of the possible spans which are hidden are equivalent to the "c" that was clicked.
+          When it finds the one that does contain the class "c" it toggles show. 
+          Then it changes the inner text of the button corresponding to the span that has been shown.
+          <br><br>
+          There is only one important take away from this:
+          <br>
+          .innerText : allows us to check and change the inner text of an element. 
+        </span>
+        <div class="btn-container"><button class="btn" onclick="btnSelection('more5')">Read More</button></div>
+        </p>
+    </article>
+
     <article class="all webhosting">
         <h3 class="blog-title">Hosting my site with Netlify</h3>
         <h4 class="blog-title">21/10/2022</h4>
@@ -89,7 +140,7 @@
 
     <article class="all latex">
       <h3 class="blog-title">Transferring MathType (Word) into LaTeX</h3>
-      <h4 class="blog-title">21/10/2022</h4>
+      <h4 class="blog-title">25/10/2022</h4>
       <img class="blog-img" src="images/mathpix.webp">
         <p class="text blog">
           I wrote my finals notes in MS Word but when I decided to make this site and share them I wanted to use a PDF format.
@@ -97,17 +148,18 @@
           All the equations I had written used the MathType add-on which, at the time, was very helpful and sped up my revision massively. 
           The problem with it, however, is that once an equation has been written it is outputted as an image into your Word document.
           When copying and pasting from Word to R Studio I was therefore really copying and pasting an image rather than an equation.
-          This meant none of my equations could be made into the necessary $$x=\alpha + \beta y$$ LaTeX format, and so couldn't be read by R Markdown.
-          Initially the only solution seemed to be re-typing all the equations into LaTeX, though very quickly after starting that tedious process I decided to search for a shortcut instead.
           <span class="moretext more3">
           <br>
+          This meant none of my equations could be made into the necessary $$x=\alpha + \beta y$$ LaTeX format, and so couldn't be read by R Markdown.
+          Initially the only solution seemed to be re-typing all the equations into LaTeX, though very quickly after starting that tedious process I decided to search for a shortcut instead.
+          <br><br>
           The best solution I found was to use an online service called Mathpix. Mathpix, for a $4.99 subscription fee, offers 500 pages of PDF conversion into the appropiate LaTeX format.
-          It uses AI powered document conversion technology to convert either snips (or photos) or entire documents into LaTeX. 
+          It uses AI powered document conversion technology to convert either snips (such as photos) or entire documents into LaTeX. 
           Although it was annoying to have to pay, the service turned what would have been a 3 month job into one that took a matter of minutes. That said the software is by no means perfect.
-          Often vectors and other symbols that I had used \boldsymbol or \mathbf for got converted to \mathbb or something else that I didn't want it to be. 
-          Similarly Mathpix didn't seem to recognise bullet points and converted them to \circ's instead. 
-          I solved all these problems simply by using ctrl+f and then replacing, for example, \circ with '-'. I'm sure this wasn't the fastest solution but I couldn't be bothered to search for another fix.
-        </span>
+          Often vectors and other symbols that I had used $\boldsymbol$ for got converted to $\mathbb$ or things got to converted to $\mathrm{}$ when I just wanted plain LaTeX maths. 
+          Similarly Mathpix didn't seem to recognise bullet points and converted them to $\circ$'s instead. 
+          I solved all these problems simply by using ctrl+f and then replacing, for example, $\circ$ with '-'. I'm sure this wasn't the fastest solution but I couldn't be bothered to search for another fix.
+          </span>
         <div class="btn-container"><button class="btn" onclick="btnSelection('more3')">Read More</button></div>
         </p>
     </article>

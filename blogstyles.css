@@ -25,9 +25,16 @@ article {
   .blog-img {
     display: block;
     margin: auto;
+    margin-top: 5px;
     margin-bottom: 5px;
     width: 95%;
-    height: 70%;
+  }
+  .blog-scnd-img {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 60%;
   }
 
 /*PAGE FUNCTIONALITY*/
@@ -48,7 +55,7 @@ article {
     margin-top: -5px;
     margin-bottom: 10px;
   }
-  button, .post-tag {
+  button {
     background-color: #fffefe;
     color: #04AA6D;
     margin-top: 5px;
@@ -66,9 +73,4 @@ article {
     }
     .show {
       display: block;
-    }
-  /*Selected*/
-    .html-btn.selected , .js-btn.selected , .css-btn.selected , .r-btn.selected , .latex-btn.selected , .webhosting-btn.selected, .econ-btn.selected {
-      background-color: #04AA6D;
-      color: #fffefe;
     }

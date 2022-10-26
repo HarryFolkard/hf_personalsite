@@ -18,6 +18,7 @@ function btnSelection(c) {
 // TAGS
 function tagSelection(c) {
   var x = document.querySelectorAll(".all");
+  console.log(x);
   for (i = 0 ; i < x.length ; i++) {
     if (x[i].className.split(" ").indexOf(c) > -1) {
       addClass(x[i], "show");
