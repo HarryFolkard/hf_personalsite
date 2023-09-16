@@ -70,7 +70,7 @@
           For the blog post tags, on clicking on the tag the user initiates the function tagSelection(c) where c is the tag which this clicked. The purpose of this function is very simple. It just needs to add the class .show to all blog posts with the class "c", and add the class .hide to all blog posts without the class "c".
           For example when you click 'Tag 1', you initiate tagSelection('tag1'), which hides all blog posts without "tag1" as a class, and shows the ones with "tag1" as a class.
           <img class="blog-scnd-img" src="images/btntag.jpg" width=20%>
-          Inside the function tagSelection(c) we initially define a variable x, which is a NodeList (sort of like an arrary) of all the classes attributed to each blog post. 
+          Inside the function tagSelection(c) we initially define a variable x, which is a NodeList (sort of like an array) of all the classes attributed to each blog post. 
           I use document.querySelectorAll(".all") since every blog post has the "all" class, and querySelectorAll exactly returns the classes included with "all". The NodeList (x) hence has as many nodes as there are blog posts. 
           So for the first post, x[1], the node is article.all.tag1 and for node 2 it is article.all.tag2. 
           Moving on then to the for loop, this just cycles through each node one at a time, and of each node the if statement asks if "c" (the tag we selected) appears in that node.
